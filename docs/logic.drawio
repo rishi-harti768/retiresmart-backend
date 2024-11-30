@@ -1,0 +1,42 @@
+<mxfile host="65bd71144e">
+    <diagram id="51b8qOvrG1GuF1PV7R5n" name="Page-1">
+        <mxGraphModel dx="532" dy="374" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="11" value="signup" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="50" width="220" height="150" as="geometry">
+                        <mxRectangle x="60" y="50" width="140" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="request: email, password;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;description: creates new unverified client&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;account with id ,token.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;response: access token, refresh token&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="11" vertex="1">
+                    <mxGeometry y="30" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="signin" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="50" width="220" height="150" as="geometry">
+                        <mxRectangle x="60" y="50" width="140" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="request: email, password;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;description: access to existing account and fetch id.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;response: id&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="15" vertex="1">
+                    <mxGeometry y="30" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="send email verification" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="580" y="50" width="220" height="150" as="geometry">
+                        <mxRectangle x="60" y="50" width="140" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="request: id;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;description: send and email with a verification link containing email, id , token.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;response: null&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="17" vertex="1">
+                    <mxGeometry y="30" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="verify email" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="240" width="220" height="150" as="geometry">
+                        <mxRectangle x="60" y="50" width="140" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="request: email, id, password;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;description: check for email existence and mark verified.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;response: null&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="19" vertex="1">
+                    <mxGeometry y="30" width="220" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

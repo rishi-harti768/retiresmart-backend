@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "access_token": {
+    "userID": 1,
+    "email": "d2n5w@example.com",
+    "data": "some data"
+  },
+  "refresh_token": {}
+}
