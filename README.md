@@ -6,15 +6,18 @@
 2.  add environment variables in `.env` file at root directory for project
 
 ```
+PORT=***
+JWT_ACCESS_SECRET=***
+JWT_REFRESH_SECRET=***
+
 DB_HOST=***
+DB_PORT=***
 DB_USER=***
 DB_PASSWORD=***
-DB_NAME=***
-DB_PORT=***
+DB_DATABASE_NAME=***
+DB_SCHEMA=***
 
-EMAIL_SERVICE_USER=***
-EMAIL_SERVICE_PASS=***
+HOST_EMAIL_ADDRESS=***
+HOST_EMAIL_PASSWORD=***
 
-ACCESS_SECRET=***
-REFRESH_SECRET=***
 ```
