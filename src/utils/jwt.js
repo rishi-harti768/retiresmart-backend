@@ -3,7 +3,7 @@ import pool from "../db/database.js";
 
 export const generateTokens = (id) => {
   const accessToken = jwt.sign({ id }, process.env.JWT_ACCESS_SECRET, {
-    expiresIn: "15m",
+    expiresIn: "1h",
   });
 
   const refreshToken = jwt.sign({ id }, process.env.JWT_REFRESH_SECRET, {

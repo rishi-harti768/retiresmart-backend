@@ -1,5 +1,7 @@
 import bcrypt from "bcryptjs";
 import pool from "../db/database.js";
+import cookieParser from "cookie-parser";
+import { cookie } from "express-validator";
 import {
   generateTokens,
   storeRefreshToken,
@@ -39,7 +41,21 @@ export const register = async (req, res) => {
     // Store refresh token
     await storeRefreshToken(result.rows[0].id, refreshToken);
 
-    res.status(200).json({ accessToken, refreshToken });
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+      maxAge: 3600000, // 1hour
+    });
+
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+      maxAge: 604800000, //7days
+    });
+
+    res.status(200).send();
   } catch (error) {
     console.error("Registration error:", error);
     res.status(500).json({ error: "Internal server error" });
@@ -71,7 +87,21 @@ export const login = async (req, res) => {
     // Store refresh token
     await storeRefreshToken(user.id, refreshToken);
 
-    res.status(200).json({ accessToken, refreshToken });
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+      maxAge: 3600000, // 1hour
+    });
+
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+      maxAge: 604800000, //7days
+    });
+
+    res.status(200).send();
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ error: "Internal server error" });

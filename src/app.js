@@ -3,17 +3,23 @@ import cors from "cors";
 import "dotenv/config";
 import authRoutes from "./routes/auth.routes.js";
 import accountRoutes from "./routes/account.routes.js";
+import genAIRoutes from "./routes/genAI.routes.js";
 import pool, { initDB } from "./db/database.js";
-// import { authenticateToken } from "./middleware/auth.js";
+import { authenticateToken } from "./middleware/auth.js";
+import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
 
 const app = express();
+dotenv.config();
 
-app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 // Auth routes
 app.use("/auth", authRoutes);
-// app.use("/account", accountRoutes);
+app.use("/account", accountRoutes);
+app.use("/ai", genAIRoutes);
 
 initDB();
 
