@@ -30,14 +30,26 @@ export const generateInvestmentStrategy = async (userData) => {
   "projections": {
     "monthly_savings_needed": number,
     "retirement_corpus": number,
-    "yearly_projections": [{ "year": number, "projected_savings": number }],
+    "yearly_projections": [
+      { "year": number, "projected_savings": number },
+      { "year": number, "projected_savings": number },
+      { "year": number, "projected_savings": number },
+      { "year": number, "projected_savings": number },
+      { "year": number, "projected_savings": number }
+    ],
     "retirement_income_sources": [{ "source": string, "amount": number }]
   },
   "risk_analysis": {
     "risk_score": number 0-100,
     "market_sensitivity": number 0-1,
     "diversification_score": number 0-100,
-    "risk_factors": [{ "factor": "string", "impact": "Low"|"Medium"|"High" }]
+    "risk_factors": [
+      { "factor": "Market Volatility", "impact": number 0-100 },
+      { "factor": "Inflation Risk", "impact": number 0-100 },
+      { "factor": "Longevity Risk", "impact": number 0-100 },
+      { "factor": "Credit Risk", "impact": number 0-100 },
+      { "factor": "Liquidity Risk", "impact": number 0-100 }
+    ]
   },
   "visualizations": {
     "charts": [
@@ -73,9 +85,9 @@ export const generateInvestmentStrategy = async (userData) => {
 User data:
 - Name: ${userData.name}
 - Age: ${userData.age}
-- Current Income: ${userData.current_income}
-- Monthly Expenditure: ${userData.monthly_expenditure}
-- Existing Savings: ${userData.existing_savings}
+- Current Income (Indian Rupees): ${userData.current_income}
+- Monthly Expenditure (Indian Rupees): ${userData.monthly_expenditure}
+- Existing Savings (Indian Rupees): ${userData.existing_savings}
 - Retirement Age Goal: ${userData.retirement_age}
 - Risk Tolerance: ${userData.risk_tolerance}
 - Desired Retirment Lifestyle: ${userData.retirement_lifestyle}

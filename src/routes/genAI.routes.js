@@ -37,7 +37,7 @@ router.post("/analyze", async (req, res) => {
     );
 
     // Store analysis results
-    await pool.query(
+    const ins = await pool.query(
       `INSERT INTO genai_analysis (
       name,
         age,
@@ -51,7 +51,7 @@ router.post("/analyze", async (req, res) => {
         projected_savings,
         monthly_investment_needed
         )
-        VALUES ($11, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+        VALUES ($11, $1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning id`,
       [
         age,
         current_income,
@@ -68,12 +68,7 @@ router.post("/analyze", async (req, res) => {
     );
 
     res.status(200).json({
-      strategy: analysis,
-      monthly_investment: monthlyInvestmentNeeded,
-      projected_savings: calculateProjectedSavings(
-        monthlyInvestmentNeeded,
-        yearsToRetirement
-      ),
+      id: ins.rows[0].id,
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
